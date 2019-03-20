@@ -5,6 +5,20 @@ networks:
     external:
       name: aether_internal
 
+volumes:
+  # docker volumes to support Kafka
+  kafka-data:
+    external:
+      name: aether_kafka_data
+      
+    zk-data:
+    external:
+      name: aether_zk_data
+
+    zk-txn-logs:
+    external:
+      name: aether_zk_logs
+
 services:
 
   # ---------------------------------
@@ -18,6 +32,9 @@ services:
     restart: on-failure
     networks:
       - aether
+    volumes:
+      - zk-data:/var/lib/zookeeper/data
+      - zk-txn-logs:/var/lib/zookeeper/log
 
   kafka:
     extends:
@@ -30,6 +47,8 @@ services:
       - zookeeper
     networks:
       - aether
+    volumes:
+      - kafka-data:/var/lib/kafka/data
 
   # ---------------------------------
   # Aether Kafka Producer

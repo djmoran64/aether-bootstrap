@@ -11,11 +11,11 @@ volumes:
     external:
       name: aether_kafka_data
       
-    zk-data:
+  zk-data:
     external:
       name: aether_zk_data
 
-    zk-txn-logs:
+  zk-txn-logs:
     external:
       name: aether_zk_logs
 

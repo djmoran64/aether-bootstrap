@@ -2,7 +2,7 @@
     "autoconfig_settings": {
         "auto_timestamp" : "aet_ts",
         "create_kibana_index": true,
-        "index_name_template": "aet_auto_%s_1",
+        "index_name_template": "aet_%s",
         "enabled": true,
         "ignored_topics": ["__confluent.support.metrics"],
         "geo_point_creation": true,

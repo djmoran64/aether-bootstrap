@@ -51,6 +51,8 @@ services:
       aether:
         aliases:
           - kernel.aether.local
+    environment:
+      CSRF_COOKIE_DOMAIN: .clinics.eha.ng
 
   # ---------------------------------
   # Aether UI
@@ -69,6 +71,8 @@ services:
       aether:
         aliases:
           - ui.aether.local
+    environment:
+      CSRF_COOKIE_DOMAIN: .clinics.eha.ng
 
   # ---------------------------------
   # Aether ODK Module
@@ -87,6 +91,8 @@ services:
       aether:
         aliases:
           - odk.aether.local
+    environment:
+      CSRF_COOKIE_DOMAIN: .clinics.eha.ng
 
   # ---------------------------------
   # NGINX

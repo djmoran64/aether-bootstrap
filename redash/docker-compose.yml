@@ -8,6 +8,11 @@ networks:
   redash_net:
       driver: bridge
 
+volumes:
+  redash_data:
+    external:
+      name: redash_database_data
+
 services:
   
   server:
@@ -65,3 +70,5 @@ services:
     restart: unless-stopped
     networks:
      - redash_net
+    volumes:
+      - redash_data:/var/lib/postgresql/data

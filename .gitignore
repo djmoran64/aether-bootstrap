@@ -38,6 +38,9 @@ Session.vim
 # extra containers configuration
 conf/nginx/sites-enabled/*.extra.conf
 
+# Kafka Viewer logs
+kafka-viewer/logs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
